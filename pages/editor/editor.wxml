@@ -18,12 +18,12 @@
 </view>
 
 
-<view class="editorContainer" style="height:{{editorHeight}}px;">
+<view class="editorContainer">
   <editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady">
   </editor>
 </view>
 <view>
   <view class="margin-tb-sm text-center">
-    <button class="cu-btn lg bg-green">提交周报</button>
+    <button class="cu-btn lg bg-green" bindtap="submitText">提交周报</button>
   </view>
 </view>

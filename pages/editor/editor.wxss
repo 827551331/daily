@@ -3,7 +3,10 @@
 @import "./assets/iconfont.wxss";
 
 .editorContainer {
-  width: 100%;
+  margin: 0px 5px;
+  border: seagreen solid 1px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 8px;
 }
 
 .ql-container {
@@ -32,7 +35,6 @@
   box-sizing: border-box;
   padding: 0 10px;
   height: 50px;
-  width: 100%;
   right: 100%;
   bottom: 0;
   display: flex;
@@ -41,4 +43,9 @@
   border: 1px solid #ECECEC;
   border-left: none;
   border-right: none;
+  border: seagreen solid 1px;
+  border-bottom: 0;
+  margin: 5px 5px 0px 5px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }

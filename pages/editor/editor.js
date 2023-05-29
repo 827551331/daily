@@ -15,7 +15,9 @@ Page({
   onLoad() {
     const platform = wx.getSystemInfoSync().platform
     const isIOS = platform === 'ios'
-    this.setData({ isIOS})
+    this.setData({
+      isIOS
+    })
     const that = this
     this.updatePosition(0)
     let keyboardHeight = 0
@@ -37,14 +39,23 @@ Page({
   },
   updatePosition(keyboardHeight) {
     const toolbarHeight = 50
-    const { windowHeight, platform } = wx.getSystemInfoSync()
+    const {
+      windowHeight,
+      platform
+    } = wx.getSystemInfoSync()
     // let editorHeight = keyboardHeight > 0 ? (windowHeight - keyboardHeight - toolbarHeight) : windowHeight
     let editorHeight = 300;
-    this.setData({ editorHeight, keyboardHeight })
+    this.setData({
+      editorHeight,
+      keyboardHeight
+    })
   },
   calNavigationBarAndStatusBar() {
     const systemInfo = wx.getSystemInfoSync()
-    const { statusBarHeight, platform } = systemInfo
+    const {
+      statusBarHeight,
+      platform
+    } = systemInfo
     const isIOS = platform === 'ios'
     const navigationBarHeight = isIOS ? 44 : 48
     return statusBarHeight + navigationBarHeight
@@ -59,7 +70,10 @@ Page({
     this.editorCtx.blur()
   },
   format(e) {
-    let { name, value } = e.target.dataset
+    let {
+      name,
+      value
+    } = e.target.dataset
     if (!name) return
     // console.log('format', name, value)
     this.editorCtx.format(name, value)
@@ -67,7 +81,9 @@ Page({
   },
   onStatusChange(e) {
     const formats = e.detail
-    this.setData({ formats })
+    this.setData({
+      formats
+    })
   },
   insertDivider() {
     this.editorCtx.insertDivider({
@@ -110,6 +126,16 @@ Page({
           }
         })
       }
+    })
+  },
+  submitText() {
+    this.editorCtx.getContents({
+      success: (res) => {
+        const content = res.html; // 获取编辑器的内容
+        // 在这里可以对编辑器的内容进行处理或发送到服务器
+        console.log(res.text);
+        console.log(res.html);
+      },
     })
   }
 })
