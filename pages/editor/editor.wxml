@@ -22,8 +22,9 @@
   <editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady">
   </editor>
 </view>
+
 <view>
-  <view class="margin-tb-sm text-center">
-    <button class="cu-btn lg bg-green" bindtap="submitText">提交周报</button>
+  <view style="width: 100%;text-align: center;margin: 5px auto;">
+    <button style="width: calc(100% - 10px);margin: 0px 5px;" class="cu-btn lg bg-green" bindtap="submitText">提交周报</button>
   </view>
 </view>
