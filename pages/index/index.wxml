@@ -4,41 +4,23 @@
   <view slot="content">修宝周报
   </view>
 </cu-custom>
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto" bindtap="navigateToEditor">{{motto}}</text>
-  </view>
-  <!-- <view>
-    <button bindgetuserinfo="login" open-type="getUserInfo" type="primary">登录</button>
-  </view> -->
-  <view class="container">
-    <view class="userinfo">
-      <block wx:if="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+<view>
+  <view style="text-align: center;">
+    <view class="cu-avatar round xl margin-xl bg-green">
+      <text class='avatar-text'>green</text>
     </view>
   </view>
-
+  <view class="margin-sm shadow-blur light bg-green">
+    <view class="cu-form-group margin-top">
+      <view class="title">账号</view>
+      <input placeholder="两字短标题" name="input"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">密码</view>
+      <input placeholder="三字标题" name="input"></input>
+    </view>
+  </view>
+  <view class="margin-tb-xl text-center">
+    <button class="cu-btn lg bg-green">start</button>
+  </view>
 </view>
