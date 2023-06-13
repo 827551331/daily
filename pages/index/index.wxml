@@ -10,17 +10,17 @@
       <text class='avatar-text'>green</text>
     </view>
   </view>
-  <view class="margin-sm shadow-blur light bg-green">
+  <view class="margin-xl shadow-blur light bg-green">
     <view class="cu-form-group margin-top">
       <view class="title">账号</view>
-      <input placeholder="两字短标题" name="input"></input>
+      <input placeholder="请输入账号" name="input" bindinput="bindInputUserName"></input>
     </view>
     <view class="cu-form-group">
       <view class="title">密码</view>
-      <input placeholder="三字标题" name="input"></input>
+      <input placeholder="请输入密码" name="input" bindinput="bindInputPW"></input>
     </view>
   </view>
   <view class="margin-tb-xl text-center">
-    <button class="cu-btn lg bg-green">start</button>
+    <button class="cu-btn lg bg-green" bindtap="navigateToEditor">start</button>
   </view>
 </view>

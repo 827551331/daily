@@ -1,0 +1,86 @@
+/* pages/list/list.wxss */
+.header{
+  height: 150px;
+  background-color: rgb(131, 175, 155);
+}
+.header .top{
+  border-bottom: 2px solid rgb(137, 190, 178);
+  height: 100px;
+  margin: 0 30px;
+}
+.header .top .day{
+  height: 50px;
+  text-align: center;
+  position: relative;
+}
+.header .top .day>span{
+  color: white;
+  font-family: '思源黑体', sans-serif;
+  font-size: x-large;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+.header .top .month{
+  height: 50px;
+  text-align: center;
+  position: relative;
+}
+.header .top .month>span{
+  color: white;
+  font-family: '思源黑体', sans-serif;
+  font-size: large;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+.header .title{
+  text-align: center;
+  position: relative;
+}
+.header .title>span{
+  color: white;
+  font-family: 宋体, serif;
+  font-size: 12px;
+  position: absolute;
+  bottom: 15px;
+  top: 10px;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+.search{
+  height: 30px;
+}
+.list .list-item{
+  background-color: skyblue;
+  height: 60px;
+  display: flex;
+}
+.list .list-item .left-content{
+  margin: 3px 0 3px 3px;
+  width: 20%;
+  background-color: aliceblue;
+}
+.list .list-item .center-content{
+  flex: 1;
+  margin: 3px 0 3px 3px;
+  background-color: aliceblue;
+}
+.list .list-item .right-content{
+  margin: 3px;
+  width: 30%;
+  background-color: aliceblue;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.list .list-item .right-content>button{
+  background-color: cadetblue;
+  width: 34rpx;
+}
