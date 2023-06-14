@@ -13,7 +13,7 @@
   text-align: center;
   position: relative;
 }
-.header .top .day>span{
+.header .top .day .day-text{
   color: white;
   font-family: '思源黑体', sans-serif;
   font-size: x-large;
@@ -28,7 +28,7 @@
   text-align: center;
   position: relative;
 }
-.header .top .month>span{
+.header .top .month .month-text{
   color: white;
   font-family: '思源黑体', sans-serif;
   font-size: large;
@@ -42,7 +42,7 @@
   text-align: center;
   position: relative;
 }
-.header .title>span{
+.header .title .title-text{
   color: white;
   font-family: 宋体, serif;
   font-size: 12px;
@@ -75,12 +75,10 @@
   margin: 3px;
   width: 30%;
   background-color: aliceblue;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: right;
 }
-.list .list-item .right-content>button{
+.list .list-item .right-content .right-content-button{
   background-color: cadetblue;
-  width: 34rpx;
 }

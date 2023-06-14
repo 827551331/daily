@@ -1,9 +1,4 @@
 <!--index.wxml-->
-<cu-custom bgColor="light bg-green" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">修宝周报
-  </view>
-</cu-custom>
 <view>
   <view style="text-align: center;">
     <view class="cu-avatar round xl margin-xl bg-green">
@@ -23,4 +18,7 @@
   <view class="margin-tb-xl text-center">
     <button class="cu-btn lg bg-green" bindtap="navigateToEditor">start</button>
   </view>
+  <mp-dialog title="test" show="{{showDialog}}" buttons="{{buttons}}">
+    <view>test content</view>
+  </mp-dialog>
 </view>

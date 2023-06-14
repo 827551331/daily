@@ -4,12 +4,21 @@ const app = getApp()
 
 Page({
   data: {
+    buttons: [{
+      text: '取消'
+    }, {
+      text: '确认'
+    }],
+    showDialog: false
 
   },
   navigateToEditor() {
-    wx.navigateTo({
-      url: '../list/list'
+    this.setData({
+      showDialog: true
     })
+    // wx.navigateTo({
+    //   url: '../list/list'
+    // })
   },
   onLoad() {
     if (wx.getUserProfile) {
@@ -18,12 +27,12 @@ Page({
       })
     }
   },
-  bindInputUserName:function(e){
+  bindInputUserName: function (e) {
     this.setData({
       userName: e.detail.value
     });
   },
-  bindInputPW:function(e){
+  bindInputPW: function (e) {
     this.setData({
       passWord: e.detail.value
     });

@@ -6,14 +6,17 @@
     "pages/list/list"
   ],
   "window": {
-    "navigationStyle": "custom",
+    "navigationStyle": "default",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "修宝快跑",
     "navigationBarTextStyle": "black"
   },
+  "useExtendedLib": {
+    "weui": true
+  },
   "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
+
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

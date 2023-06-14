@@ -1,32 +1,26 @@
 <!--pages/list/list.wxml-->
-<cu-custom bgColor="light bg-green" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">修宝周报
-  </view>
-</cu-custom>
-
 <view class="header">
   <view class="top">
     <view class="day">
-      <span>12</span>
+      <span class="day-text">12</span>
     </view>
     <view class="month">
-      <span>六月 周一</span>
+      <span class="month-text">六月 周一</span>
     </view>
   </view>
   <view class="title">
-    <span>如果有天会相遇，那么我希望是今天。</span>
+    <span class="title-text">如果有天会相遇，那么我希望是今天。</span>
   </view>
 </view>
 <view>
   <view class="search"></view>
-    <view class="list">
-        <view class="list-item">
-            <view class="left-content">left</view>
-            <view class="center-content">center</view>
-            <view class="right-content">
-                <button class="right-content-button">copy</button>
-            </view>
-        </view>
+  <view class="list">
+    <view class="list-item">
+      <view class="left-content">left</view>
+      <view class="center-content">center</view>
+      <view class="right-content">
+        <button size="mini" plain="true" class="right-content-button">copy</button>
+      </view>
     </view>
+  </view>
 </view>
