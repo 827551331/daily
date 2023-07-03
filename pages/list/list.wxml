@@ -14,13 +14,17 @@
 </view>
 <view>
   <view class="search"></view>
-  <view class="list">
+  <view class="list" wx:for="{{dailyList}}" wx:for-item="item" wx:for-index="index">
     <view class="list-item">
-      <view class="left-content">left</view>
-      <view class="center-content">center</view>
+      <!-- <view class="left-content">left</view> -->
+      <view class="center-content" bindtap="toEditor">{{item.title}}</view>
       <view class="right-content">
-        <button size="mini" plain="true" class="right-content-button">copy</button>
+        <button size="mini" plain="true" 
+        class="right-content-button" 
+        bindtap="copyToClipboard"
+        data-id="{{item.id}}">copy</button>
       </view>
     </view>
   </view>
 </view>
+

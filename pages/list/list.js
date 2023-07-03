@@ -1,18 +1,34 @@
 // pages/list/list.js
+const base64 = require('../images/base64');
 Page({
+  mixins: [require('../../mixin/common')],
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    dailyList: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    var that = this;
+    wx.request({
+      url: 'https://daily.yibabycloud.cn/daily/list',
+      method: 'POST',
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          dailyList: res.data,
+        });
+      }
+    })
   },
 
   /**
@@ -64,7 +80,9 @@ Page({
 
   },
   // 在按钮点击事件或其他触发时执行复制操作
-  copyToClipboard() {
+  copyToClipboard(event) {
+    const id = event.currentTarget.dataset.id;
+    console.log("id:"+id);
     var content = '要复制的内容'; // 替换为你要复制的内容
     console.log("copy");
     wx.setClipboardData({
@@ -82,7 +100,7 @@ Page({
       }
     });
   },
-  toEditor(){
+  toEditor() {
     wx.navigateTo({
       url: '../editor/editor'
     })

@@ -16,9 +16,9 @@ Page({
     this.setData({
       showDialog: true
     })
-    // wx.navigateTo({
-    //   url: '../list/list'
-    // })
+    wx.navigateTo({
+      url: '../list/list'
+    })
   },
   onLoad() {
     if (wx.getUserProfile) {

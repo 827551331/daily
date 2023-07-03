@@ -1,24 +1,37 @@
 <!--index.wxml-->
-<view>
-  <view style="text-align: center;">
-    <view class="cu-avatar round xl margin-xl bg-green">
-      <text class='avatar-text'>green</text>
+<page-meta root-font-size="system" />
+<view class="page" data-weui-theme="{{theme}}" data-weui-mode="{{mode}}">
+  <view class="logo-view">
+    <image class="logo" src="../../utils/image/md.jpeg" mode="heightFix"/>
+  </view>
+  <view class="">
+    <view class="weui-form__control-area">
+      <view class="weui-cells__group weui-cells__group_form">
+        <view class="weui-cells">
+          <view class="weui-cell weui-cell_active">
+            <view class="weui-cell__hd"><label class="weui-label">密钥</label></view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="火速填写" placeholder-class="weui-input__placeholder" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-form__tips-area">
+      <view class="weui-form__tips">
+        * 输入 6 位密钥登入
+      </view>
+    </view>
+    <view class="weui-form__opr-area">
+      <a aria-role="button" class="weui-btn weui-btn_primary" bindtap="navigateToEditor">确定</a>
+    </view>
+    <view class="weui-form__extra-area">
+      <view class="weui-footer">
+        <view class="weui-footer__links">
+          <navigator url="javascript:" class="weui-footer__link">yibaby runner</navigator>
+        </view>
+        <view class="weui-footer__text">Copyright © 2008-2023 weui.io</view>
+      </view>
     </view>
   </view>
-  <view class="margin-xl shadow-blur light bg-green">
-    <view class="cu-form-group margin-top">
-      <view class="title">账号</view>
-      <input placeholder="请输入账号" name="input" bindinput="bindInputUserName"></input>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">密码</view>
-      <input placeholder="请输入密码" name="input" bindinput="bindInputPW"></input>
-    </view>
-  </view>
-  <view class="margin-tb-xl text-center">
-    <button class="cu-btn lg bg-green" bindtap="navigateToEditor">start</button>
-  </view>
-  <mp-dialog title="test" show="{{showDialog}}" buttons="{{buttons}}">
-    <view>test content</view>
-  </mp-dialog>
 </view>

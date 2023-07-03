@@ -1,10 +1,10 @@
 /* pages/list/list.wxss */
 .header{
   height: 150px;
-  background-color: rgb(131, 175, 155);
+  background-color: #E9F9E5;
 }
 .header .top{
-  border-bottom: 2px solid rgb(137, 190, 178);
+  border-bottom: 3px double #000000;
   height: 100px;
   margin: 0 30px;
 }
@@ -57,9 +57,16 @@
   height: 30px;
 }
 .list .list-item{
-  background-color: skyblue;
+  /* background-color: skyblue; */
   height: 60px;
   display: flex;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-top: 2px solid #EAEAEA;
+}
+.list .list-item:last-child{
+  border-top: 2px solid #EAEAEA;
+  border-bottom: 2px solid #EAEAEA;
 }
 .list .list-item .left-content{
   margin: 3px 0 3px 3px;
@@ -68,11 +75,11 @@
 }
 .list .list-item .center-content{
   flex: 1;
-  margin: 3px 0 3px 3px;
+  margin: 3px 0 3px 0;
   background-color: aliceblue;
 }
 .list .list-item .right-content{
-  margin: 3px;
+  margin: 3px 0 3px 0;
   width: 30%;
   background-color: aliceblue;
   display: flex;
