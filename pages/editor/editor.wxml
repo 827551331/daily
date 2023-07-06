@@ -1,9 +1,13 @@
 <!--pages/editor/editor.wxml-->
-<cu-custom bgColor="light bg-green" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">修宝周报
+
+<view class="weui-cell weui-cell_active">
+  <view class="weui-cell__hd"><label class="weui-label">日报标题</label></view>
+  <view class="weui-cell__bd weui-flex">
+    <input class="weui-input" type="text" placeholder="请输入日报标题" 
+    placeholder-class="weui-input__placeholder" 
+    value="{{title}}" bindinput="handleInput"/>
   </view>
-</cu-custom>
+</view>
 
 <view class="toolbar" catchtouchend="format" hidden="{{false}}" style="bottom: {{isIOS ? keyboardHeight : 0}}px">
   <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>

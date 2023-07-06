@@ -5,20 +5,49 @@ Page({
     placeholder: '开始输入...',
     editorHeight: 300,
     keyboardHeight: 0,
-    isIOS: false
+    isIOS: false,
+    title: null,
+    id: null
   },
   readOnlyChange() {
     this.setData({
       readOnly: !this.data.readOnly
     })
   },
-  onLoad() {
+  onLoad(options) {
+    let that = this;
+    that.setData({
+      id: options.id
+    })
+
+    wx.request({
+      url: 'https://daily.yibabycloud.cn/daily/' + options.id,
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          title: res.data.title
+        })
+        that.editorCtx.setContents({
+          html: res.data.content,
+          success: function () {
+            console.log('内容设置成功');
+          },
+          fail: function () {
+            console.log('内容设置失败');
+          }
+        })
+      }
+    })
+
     const platform = wx.getSystemInfoSync().platform
     const isIOS = platform === 'ios'
     this.setData({
       isIOS
     })
-    const that = this
     this.updatePosition(0)
     let keyboardHeight = 0
     wx.onKeyboardHeightChange(res => {
@@ -36,6 +65,12 @@ Page({
       }, duration)
 
     })
+  },
+  handleInput(event) {
+    const value = event.detail.value;
+    this.setData({
+      title: value
+    });
   },
   updatePosition(keyboardHeight) {
     const toolbarHeight = 50
@@ -129,12 +164,31 @@ Page({
     })
   },
   submitText() {
-    this.editorCtx.getContents({
+    var that = this;
+    that.editorCtx.getContents({
       success: (res) => {
-        const content = res.html; // 获取编辑器的内容
+        const content = res.text; // 获取编辑器的内容
+        const editorContent = res.html;
         // 在这里可以对编辑器的内容进行处理或发送到服务器
         console.log(res.text);
         console.log(res.html);
+        wx.request({
+          url: 'https://daily.yibabycloud.cn/daily',
+          method: 'POST',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          data: {
+            id: that.data.id,
+            title: that.data.title,
+            content: content,
+            editorContent: editorContent
+          },
+          success(res) {
+            console.log(res.data)
+
+          }
+        })
       },
     })
   }
